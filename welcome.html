@@ -1,20 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome - Sholih Abdulloh</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
+      /* Reset & Global */
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -28,22 +24,14 @@
         font-family: "Poppins", sans-serif;
         color: white;
         background: #0f172a;
-        background-image:
-          radial-gradient(
-            circle at 0% 0%,
-            rgba(255, 165, 0, 0.1) 0%,
-            transparent 35%
-          ),
-          radial-gradient(
-            circle at 100% 100%,
-            rgba(255, 165, 0, 0.05) 0%,
-            transparent 35%
-          );
+        background-image: 
+          radial-gradient(circle at 0% 0%, rgba(255, 165, 0, 0.1) 0%, transparent 35%),
+          radial-gradient(circle at 100% 100%, rgba(255, 165, 0, 0.05) 0%, transparent 35%);
         min-height: 100vh;
         line-height: 1.6;
       }
 
-      /* NAVBAR */
+      /* ===== NAVBAR ===== */
       .navbar {
         display: flex;
         justify-content: space-between;
@@ -65,9 +53,7 @@
         letter-spacing: 1px;
       }
 
-      .logo span {
-        color: orange;
-      }
+      .logo span { color: orange; }
 
       .nav-links {
         list-style: none;
@@ -82,12 +68,11 @@
         transition: 0.3s;
       }
 
-      .nav-links a:hover,
-      .nav-links a.active {
+      .nav-links a:hover, .nav-links a.active {
         color: orange;
       }
 
-      /* HERO SECTION  */
+      /* ===== HERO SECTION ===== */
       .hero {
         padding: 160px 8% 40px;
         text-align: center;
@@ -97,14 +82,8 @@
       }
 
       @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
       .hero h1 {
@@ -114,16 +93,14 @@
         line-height: 1.2;
       }
 
-      .highlight {
-        color: orange;
-      }
+      .highlight { color: orange; }
 
       .hero p {
         font-size: 1.1rem;
         color: #94a3b8;
       }
 
-      /*  CARD GRID (6 KARTU SEJAJAR) */
+      /* ===== CARD GRID (6 KARTU SEJAJAR) ===== */
       .container {
         max-width: 1200px;
         margin: 40px auto;
@@ -168,6 +145,7 @@
         color: #94a3b8;
       }
 
+      /* ===== CONTENT SECTIONS ===== */
       .content-section {
         max-width: 1000px;
         margin: 60px auto;
@@ -185,15 +163,8 @@
         justify-content: center;
       }
 
-      .section-title h2 {
-        font-size: 2rem;
-        color: orange;
-      }
-      .section-title .line {
-        height: 2px;
-        width: 50px;
-        background: orange;
-      }
+      .section-title h2 { font-size: 2rem; color: orange; }
+      .section-title .line { height: 2px; width: 50px; background: orange; }
 
       .text-block {
         text-align: center;
@@ -203,11 +174,7 @@
       }
 
       .misi-box {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 165, 0, 0.1),
-          transparent
-        );
+        background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), transparent);
         padding: 30px;
         border-left: 4px solid orange;
         border-radius: 0 20px 20px 0;
@@ -215,7 +182,7 @@
         text-align: left;
       }
 
-
+      /* ===== CTA AREA ===== */
       .cta-area {
         text-align: center;
         padding: 60px 8%;
@@ -248,9 +215,7 @@
       }
 
       @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2rem;
-        }
+        .hero h1 { font-size: 2rem; }
       }
     </style>
   </head>
@@ -267,68 +232,45 @@
     </nav>
 
     <section class="hero">
-      <h1>
-        Selamat Datang di <span class="highlight">Ruang Digital Saya</span>
-      </h1>
-      <p>
-        Hub pusat informasi mengenai dedikasi, visi, dan kompetensi saya dalam
-        dunia Manajemen dan pengembangan teknologi.
-      </p>
+      <h1>Selamat Datang di <span class="highlight">Ruang Digital Saya</span></h1>
+      <p>Hub pusat informasi mengenai dedikasi, visi, dan kompetensi saya dalam dunia Manajemen dan pengembangan teknologi.</p>
     </section>
 
     <section class="container">
       <div class="card">
         <i class="fa-solid fa-laptop-code"></i>
         <h3>Digital Presence</h3>
-        <p>
-          Portofolio digital yang menampilkan sinergi antara kemampuan teknis
-          dan pencapaian akademik.
-        </p>
+        <p>Portofolio digital yang menampilkan sinergi antara kemampuan teknis dan pencapaian akademik.</p>
       </div>
 
       <div class="card">
         <i class="fa-solid fa-graduation-cap"></i>
         <h3>Latar Belakang</h3>
-        <p>
-          Mahasiswa aktif Universitas Pertiwi dengan konsentrasi Manajemen
-          Sumber Daya Manusia.
-        </p>
+        <p>Mahasiswa aktif Universitas Pertiwi dengan konsentrasi Manajemen Sumber Daya Manusia.</p>
       </div>
 
       <div class="card">
         <i class="fa-solid fa-bullseye"></i>
         <h3>Tujuan Utama</h3>
-        <p>
-          Membangun identitas profesional yang kompetitif dan relevan di era
-          transformasi digital.
-        </p>
+        <p>Membangun identitas profesional yang kompetitif dan relevan di era transformasi digital.</p>
       </div>
 
       <div class="card">
         <i class="fa-solid fa-rocket"></i>
         <h3>Growth Mindset</h3>
-        <p>
-          Berkomitmen untuk terus beradaptasi dan mempelajari tren industri masa
-          kini.
-        </p>
+        <p>Berkomitmen untuk terus beradaptasi dan mempelajari tren industri masa kini.</p>
       </div>
 
       <div class="card">
         <i class="fa-solid fa-user-gear"></i>
         <h3>Soft Skills</h3>
-        <p>
-          Leadership, manajemen waktu, dan komunikasi efektif yang diasah
-          melalui organisasi.
-        </p>
+        <p>Leadership, manajemen waktu, dan komunikasi efektif yang diasah melalui organisasi.</p>
       </div>
 
       <div class="card">
         <i class="fa-solid fa-network-wired"></i>
         <h3>Networking</h3>
-        <p>
-          Terbuka untuk kolaborasi strategis guna menciptakan dampak positif di
-          lingkungan kerja.
-        </p>
+        <p>Terbuka untuk kolaborasi strategis guna menciptakan dampak positif di lingkungan kerja.</p>
       </div>
     </section>
 
@@ -340,14 +282,11 @@
       </div>
       <div class="text-block">
         <p style="font-style: italic; font-size: 1.2rem; color: #fff">
-          "Menjadi lulusan yang berkompeten, berkarakter, serta mampu
-          beradaptasi dengan perkembangan zaman."
+          "Menjadi lulusan yang berkompeten, berkarakter, serta mampu beradaptasi dengan perkembangan zaman."
         </p>
         <div class="misi-box">
           <p>
-            Mempersiapkan diri menjadi lulusan Manajemen SDM yang beretika. Saya
-            berkomitmen mengasah kemampuan komunikasi dan pengelolaan organisasi
-            agar siap berkontribusi secara profesional.
+            Mempersiapkan diri menjadi lulusan Manajemen SDM yang beretika. Saya berkomitmen mengasah kemampuan komunikasi dan pengelolaan organisasi agar siap berkontribusi secara profesional.
           </p>
         </div>
       </div>
@@ -361,9 +300,7 @@
       </div>
       <div class="text-block" style="text-align: left">
         <p>
-          Saya percaya sukses adalah hasil konsistensi. Saat ini saya memperkuat
-          fondasi <b>Manajemen SDM</b> sembari mengeksplorasi dunia IT dan Web
-          Development untuk mendukung fleksibilitas karier saya.
+          Saya percaya sukses adalah hasil konsistensi. Saat ini saya memperkuat fondasi <b>Manajemen SDM</b> sembari mengeksplorasi dunia IT dan Web Development untuk mendukung fleksibilitas karier saya.
         </p>
       </div>
     </section>
@@ -375,8 +312,7 @@
     </div>
 
     <footer>
-      &copy; 2025 Sholih Abdulloh &bull; Web Design Class &bull; Universitas
-      Pertiwi
+      &copy; 2025 Sholih Abdulloh &bull; Web Design Class &bull; Universitas Pertiwi
     </footer>
   </body>
 </html>
