@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome - Sholih Abdulloh</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: white;
+        background: #0f172a;
+        background-image:
+          radial-gradient(
+            circle at 0% 0%,
+            rgba(255, 165, 0, 0.1) 0%,
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at 100% 100%,
+            rgba(255, 165, 0, 0.05) 0%,
+            transparent 35%
+          );
+        min-height: 100vh;
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 999;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: #fff;
+        letter-spacing: 1px;
+      }
+
+      .logo span {
+        color: orange;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #cbd5e1;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: orange;
+      }
+
+      /* HERO SECTION  */
+      .hero {
+        padding: 160px 8% 40px;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        animation: fadeIn 1s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .highlight {
+        color: orange;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: #94a3b8;
+      }
+
+      /*  CARD GRID (6 KARTU SEJAJAR) */
+      .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 8%;
+        display: grid;
+        /* Membuat grid 3 kolom pada desktop agar pas 6 kartu (2 baris) */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 40px 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.4s ease;
+        text-align: center;
+      }
+
+      .card:hover {
+        background: rgba(255, 255, 255, 0.07);
+        transform: translateY(-10px);
+        border-color: rgba(255, 165, 0, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .card i {
+        font-size: 2.8rem;
+        color: orange;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+        color: #f8fafc;
+      }
+
+      .card p {
+        font-size: 0.95rem;
+        color: #94a3b8;
+      }
+
+      .content-section {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 60px 8%;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+        justify-content: center;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+        color: orange;
+      }
+      .section-title .line {
+        height: 2px;
+        width: 50px;
+        background: orange;
+      }
+
+      .text-block {
+        text-align: center;
+        font-size: 1.05rem;
+        color: #cbd5e1;
+        line-height: 1.8;
+      }
+
+      .misi-box {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 165, 0, 0.1),
+          transparent
+        );
+        padding: 30px;
+        border-left: 4px solid orange;
+        border-radius: 0 20px 20px 0;
+        margin-top: 30px;
+        text-align: left;
+      }
+
+
+      .cta-area {
+        text-align: center;
+        padding: 60px 8%;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.4s;
+        background: orange;
+        color: #0f172a;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(255, 165, 0, 0.4);
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">PORT<span>FOLIO</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="welcome.html" class="active">Welcome</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>
+        Selamat Datang di <span class="highlight">Ruang Digital Saya</span>
+      </h1>
+      <p>
+        Hub pusat informasi mengenai dedikasi, visi, dan kompetensi saya dalam
+        dunia Manajemen dan pengembangan teknologi.
+      </p>
+    </section>
+
+    <section class="container">
+      <div class="card">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3>Digital Presence</h3>
+        <p>
+          Portofolio digital yang menampilkan sinergi antara kemampuan teknis
+          dan pencapaian akademik.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>Latar Belakang</h3>
+        <p>
+          Mahasiswa aktif Universitas Pertiwi dengan konsentrasi Manajemen
+          Sumber Daya Manusia.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-bullseye"></i>
+        <h3>Tujuan Utama</h3>
+        <p>
+          Membangun identitas profesional yang kompetitif dan relevan di era
+          transformasi digital.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-rocket"></i>
+        <h3>Growth Mindset</h3>
+        <p>
+          Berkomitmen untuk terus beradaptasi dan mempelajari tren industri masa
+          kini.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-user-gear"></i>
+        <h3>Soft Skills</h3>
+        <p>
+          Leadership, manajemen waktu, dan komunikasi efektif yang diasah
+          melalui organisasi.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-network-wired"></i>
+        <h3>Networking</h3>
+        <p>
+          Terbuka untuk kolaborasi strategis guna menciptakan dampak positif di
+          lingkungan kerja.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-title">
+        <div class="line"></div>
+        <h2>Visi & Misi</h2>
+        <div class="line"></div>
+      </div>
+      <div class="text-block">
+        <p style="font-style: italic; font-size: 1.2rem; color: #fff">
+          "Menjadi lulusan yang berkompeten, berkarakter, serta mampu
+          beradaptasi dengan perkembangan zaman."
+        </p>
+        <div class="misi-box">
+          <p>
+            Mempersiapkan diri menjadi lulusan Manajemen SDM yang beretika. Saya
+            berkomitmen mengasah kemampuan komunikasi dan pengelolaan organisasi
+            agar siap berkontribusi secara profesional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" style="background: transparent">
+      <div class="section-title">
+        <div class="line"></div>
+        <h2>Pengembangan Diri</h2>
+        <div class="line"></div>
+      </div>
+      <div class="text-block" style="text-align: left">
+        <p>
+          Saya percaya sukses adalah hasil konsistensi. Saat ini saya memperkuat
+          fondasi <b>Manajemen SDM</b> sembari mengeksplorasi dunia IT dan Web
+          Development untuk mendukung fleksibilitas karier saya.
+        </p>
+      </div>
+    </section>
+
+    <div class="cta-area">
+      <a href="contact.html" class="btn">
+        <i class="fa-solid fa-handshake"></i> Jalin Kerja Sama
+      </a>
+    </div>
+
+    <footer>
+      &copy; 2025 Sholih Abdulloh &bull; Web Design Class &bull; Universitas
+      Pertiwi
+    </footer>
+  </body>
+</html>

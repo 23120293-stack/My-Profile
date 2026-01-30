@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sertifikat - Sholih Abdulloh</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: white;
+        background: #0f172a;
+        background-image:
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 165, 0, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 165, 0, 0.05) 0%,
+            transparent 40%
+          );
+        min-height: 100vh;
+        line-height: 1.6;
+      }
+
+      /*  NAVBAR  */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 1000;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+      }
+      .logo span {
+        color: orange;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #cbd5e1;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      .nav-links a:hover {
+        color: orange;
+      }
+
+      /*  HERO */
+      .hero {
+        text-align: center;
+        padding: 160px 8% 40px;
+        animation: fadeIn 1s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .hero h1 span {
+        color: orange;
+      }
+
+      .hero p {
+        color: #94a3b8;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+      /*  CERTIFICATE GRID (RATA 2x2) */
+      .cert-container {
+        max-width: 1200px;
+        margin: 40px auto 100px;
+        padding: 0 8%;
+        display: grid;
+        /* Mengatur grid agar rata 2 kolom pada desktop */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+      }
+
+      .cert-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cert-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(255, 165, 0, 0.4);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .img-box {
+        position: relative;
+        height: 240px;
+        overflow: hidden;
+      }
+
+      .cert-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .cert-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .cert-content {
+        padding: 25px;
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cert-content .category {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        color: orange;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .cert-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        color: #f8fafc;
+      }
+
+      .cert-content p {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+
+      .btn-view {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 24px;
+        background: transparent;
+        color: orange;
+        font-weight: 600;
+        border: 2px solid orange;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: 0.3s;
+        margin-top: auto;
+      }
+
+      .btn-view:hover {
+        background: orange;
+        color: #0f172a;
+      }
+
+      /*  FOOTER  */
+      footer {
+        text-align: center;
+        padding: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+
+      /* Responsif untuk Tablet dan HP */
+      @media (max-width: 992px) {
+        .cert-container {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">PORT<span>FOLIO</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="welcome.html">Welcome</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Koleksi <span>Sertifikat</span></h1>
+      <p>
+        Daftar pencapaian akademik dan prestasi nasional yang telah saya raih
+        untuk membangun kompetensi profesional.
+      </p>
+    </section>
+
+    <section class="cert-container">
+      <div class="cert-card">
+        <div class="img-box">
+          <img src="sertifikat4.jpg" alt="Sertifikat Penulis" />
+        </div>
+        <div class="cert-content">
+          <span class="category">Prestasi </span>
+          <h3>Penulis Terbaik</h3>
+          <p>
+            Dianugerahi sebagai Penulis Terbaik kategori Cerpen pada Pentas
+            Cerita Nasional Ke-4 Festival Penulis 2026.
+          </p>
+          <a
+            href="https://drive.google.com/file/d/1yeW12BEtN0d7VpW-ryRKHu3E2UTby8yR/view?usp=sharing"
+            class="btn-view"
+          >
+            <i class="fa-solid fa-eye"></i> Lihat Dokumen
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="img-box">
+          <img src="sertifikat1.jpg" alt="Sertifikat Kepemimpinan" />
+        </div>
+        <div class="cert-content">
+          <span class="category">Soft Skill</span>
+          <h3>Kepemimpinan</h3>
+          <p>
+            Pelatihan leadership intensif untuk mengasah manajemen organisasi
+            dan koordinasi tim secara efektif.
+          </p>
+          <a
+            href="https://drive.google.com/file/d/1sX20KHCYnsOXhm5YgniE6MJtM8Hnx-WW/view?usp=sharing"
+            target="_blank"
+            class="btn-view"
+          >
+            <i class="fa-solid fa-eye"></i> Lihat Dokumen
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="img-box">
+          <img src="sertifikat2.jpg" alt="Sertifikat Seminar AI" />
+        </div>
+        <div class="cert-content">
+          <span class="category">Teknologi</span>
+          <h3>Seminar AI & Keuangan</h3>
+          <p>
+            Mempelajari integrasi Kecerdasan Buatan dalam optimalisasi sistem
+            akuntansi dan manajemen keuangan modern.
+          </p>
+          <a
+            href="https://drive.google.com/file/d/1-CbixNg5pyMOc3t4jby06u-hamYTy3sf/view?usp=sharing"
+            target="_blank"
+            class="btn-view"
+          >
+            <i class="fa-solid fa-eye"></i> Lihat Dokumen
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="img-box">
+          <img src="sertifikat3.jpg" alt="Sertifikat Pemasaran Digital" />
+        </div>
+        <div class="cert-content">
+          <span class="category">Bisnis</span>
+          <h3>Digital Marketing</h3>
+          <p>
+            Pendalaman strategi pemasaran berbasis data untuk meningkatkan
+            jangkauan pasar di ekosistem digital.
+          </p>
+          <a
+            href="https://drive.google.com/file/d/1GWqB2ndPkm8y2LNJhCOxyndbx9bpEW3H/view?usp=sharing"
+            target="_blank"
+            class="btn-view"
+          >
+            <i class="fa-solid fa-eye"></i> Lihat Dokumen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Sholih Abdulloh &bull; Web Design Class &bull; Universitas
+      Pertiwi
+    </footer>
+  </body>
+</html>

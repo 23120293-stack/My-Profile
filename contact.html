@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Sholih Abdulloh</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #0f172a;
+        background-image:
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 165, 0, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 165, 0, 0.05) 0%,
+            transparent 40%
+          );
+        color: white;
+        min-height: 100vh;
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 1000;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+      }
+      .logo span {
+        color: orange;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #cbd5e1;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: orange;
+      }
+
+      /*  HERO  */
+      .contact-hero {
+        text-align: center;
+        padding: 150px 8% 40px;
+        animation: fadeInDown 1s ease-out;
+      }
+      .contact-hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      .contact-hero span {
+        color: orange;
+      }
+      .contact-hero p {
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+      /* CONTACT CONTAINER */
+      .contact-container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 8%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+      }
+
+      .contact-info {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 40px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+      }
+      .contact-info h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        color: orange;
+      }
+      .info-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 15px;
+        transition: 0.3s;
+      }
+      .info-card:hover {
+        background: rgba(255, 165, 0, 0.1);
+        transform: translateX(10px);
+      }
+      .info-card i {
+        font-size: 1.5rem;
+        color: orange;
+      }
+      .info-card div h4 {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        font-weight: 400;
+      }
+      .info-card div p,
+      .info-card div a {
+        font-size: 1rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      /* SOCIALS */
+      .social-grid {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+      }
+      .social-grid a {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        color: white;
+        font-size: 1.3rem;
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .social-grid a:hover {
+        background: orange;
+        color: #0f172a;
+        transform: translateY(-5px);
+      }
+
+      /* FORM SIDE */
+      .contact-form {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 40px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+      }
+      .form-group {
+        position: relative;
+        margin-bottom: 25px;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 0;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 1rem;
+        transition: 0.3s;
+        outline: none;
+      }
+      .form-group label {
+        position: absolute;
+        top: 12px;
+        left: 0;
+        color: #94a3b8;
+        pointer-events: none;
+        transition: 0.3s;
+      }
+      .form-group input:focus ~ label,
+      .form-group input:valid ~ label,
+      .form-group textarea:focus ~ label,
+      .form-group textarea:valid ~ label {
+        top: -15px;
+        font-size: 0.8rem;
+        color: orange;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-bottom-color: orange;
+      }
+
+      .btn-submit {
+        width: 100%;
+        padding: 16px;
+        background: orange;
+        border: none;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .btn-submit:hover {
+        background: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(255, 165, 0, 0.2);
+      }
+
+      /* MAP SECTION */
+      .map-container {
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 0 8%;
+      }
+      .map-wrapper {
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        filter: grayscale(0.8) invert(0.9) contrast(1.2);
+        transition: 0.5s;
+      }
+      .map-wrapper:hover {
+        filter: none;
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 768px) {
+        .contact-hero h1 {
+          font-size: 2.2rem;
+        }
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">PORT<span>FOLIO</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="welcome.html">Welcome</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="contact-hero">
+      <h1>Let's <span>Talk</span></h1>
+      <p>
+        Punya ide proyek, pertanyaan akademik, atau sekadar ingin bertegur sapa?
+        Kirimkan pesan Anda melalui form di bawah ini.
+      </p>
+    </section>
+
+    <section class="contact-container">
+      <div class="contact-info">
+        <h2>Kontak Saya</h2>
+        <div class="info-card">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/6281384305243" target="_blank"
+              >+62 813-8430-5243</a
+            >
+          </div>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email Resmi</h4>
+            <a href="mailto:23120293@pertiwi.ac.id">23120293@pertiwi.ac.id</a>
+          </div>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-location-dot"></i>
+          <div>
+            <h4>Lokasi</h4>
+            <p>Jakarta Timur, Indonesia</p>
+          </div>
+        </div>
+        <div class="social-grid">
+          <a href="https://facebook.com/char.thaiman.7/" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://instagram.com/Sholih_Abdulloh" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/sholih-abdulloh-99b093237/"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form
+          action="https://formspree.io/f/mzdegraq"
+          method="POST"
+          id="contactForm"
+        >
+          <div class="form-group">
+            <input type="text" name="nama" required />
+            <label>Nama Lengkap</label>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" required />
+            <label>Alamat Email</label>
+          </div>
+          <div class="form-group">
+            <textarea name="pesan" required></textarea>
+            <label>Pesan Anda</label>
+          </div>
+          <button type="submit" class="btn-submit">
+            Kirim Sekarang <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <div class="map-container">
+      <div class="map-wrapper">
+        <iframe
+          src="https://maps.google.com/maps?q=Jl. Dewi Sartika No.Kav. 2-3 5, RT.6/RW.7, Cililitan, Jakarta TImur, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13640&t=&z=5&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="350"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Sholih Abdulloh &bull; Web Design Class &bull; Universitas
+      Pertiwi
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
